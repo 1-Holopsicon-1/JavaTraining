@@ -1,0 +1,22 @@
+1) Primitives [+]
+    numbers
+   - byte
+   - short
+   - int
+   - long
+   floating num
+   - float
+   - double
+   text
+   - char
+
+2) Upcast - DownCast [+]
+3) Equals [+]
+4) Hashcode [+]
+5) Overwrite [+]
+6) Overload [+]
+7) Interface
+8) Maven [+]
+    - Obj -> json
+    - json -> Obj
+    - json.file
