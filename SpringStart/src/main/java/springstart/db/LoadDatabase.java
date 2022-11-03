@@ -15,8 +15,8 @@ public class LoadDatabase {
     @Bean
     CommandLineRunner initDb(PrimitiveInfoRepo repo){
         return args -> {
-            log.info("Preload " + repo.save(new PrimitiveInfo( 1L, "1Hello World1")));
-            log.info("Preload " + repo.save(new PrimitiveInfo( 2L, "Java sucks")));
+            log.info("Preload " + repo.save(new PrimitiveInfo().setMessage("Hello World")));
+            log.info("Preload " + repo.save(new PrimitiveInfo().setMessage("Postgres worked!")));
         };
     }
 }
