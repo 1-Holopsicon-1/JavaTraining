@@ -1,11 +1,11 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:2020/springfirst
+    url: jdbc:postgresql://localhost:5432/lqb
     driverClassName: org.postgresql.Driver
-    username: postgres
-    password: postgrespw
+    username: user
+    password: pw
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: none
     database: postgresql
     databasePlatform: org.hibernate.dialect.PostgreSQLDialect
