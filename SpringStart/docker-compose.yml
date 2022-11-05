@@ -1,0 +1,19 @@
+version: "3"
+services:
+  db:
+    container_name: postgresql
+    image: postgres:15.0-alpine
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pw
+      POSTGRES_DB: lqb
+
+  backend:
+    container_name: Spring
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:8080
+    depends_on:
+      - db
