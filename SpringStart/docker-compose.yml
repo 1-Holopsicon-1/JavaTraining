@@ -7,6 +7,8 @@ services:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: pw
       POSTGRES_DB: lqb
+    ports:
+      - 3000:5432
 
   backend:
     container_name: Spring
@@ -14,6 +16,13 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - 3000:8080
+      - 8080:8080
     depends_on:
       - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/lqb
+      - SPRING_DATASOURCE_USERNAME=user
+      - SPRING_DATASOURCE_PASSWORD=pw
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=none
+      - SPRING_JPA_DATABASE=postgresql
+      - SPRING_JPA_DATABASEPLATFORM=org.hibernate.dialect.PostgreSQLDialect
